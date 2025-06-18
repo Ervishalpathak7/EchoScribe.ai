@@ -1,0 +1,31 @@
+{
+  "name": "echoscribe",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "turbo": "^2.5.4"
+  }
+}
+{
+  "name": "echoscribe-monorepo",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:frontend": "turbo run dev --filter=frontend",
+    "dev:gateway": "turbo run dev --filter=gateway"
+  },
+  "devDependencies": {
+    "turbo": "^1.10.0"
+  }
+}
