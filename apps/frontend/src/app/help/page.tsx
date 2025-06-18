@@ -273,7 +273,7 @@ export default function HelpPage() {
                       <Search className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
                       <h3 className="text-lg font-semibold mb-2">No results found</h3>
                       <p className="text-muted-foreground mb-4">
-                        We couldn't find any FAQs matching "{searchQuery}". Try different keywords or contact our
+                        We couldn&apos;t find any FAQs matching &quot;{searchQuery}&quot;. Try different keywords or contact our
                         support team.
                       </p>
                       <Link href="/contact">
@@ -293,7 +293,7 @@ export default function HelpPage() {
         <div className="container text-center">
           <h2 className="text-3xl font-bold mb-4">Still need help?</h2>
           <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-            Can't find what you're looking for? Our support team is here to help you get the most out of EchoScribe.
+            Can&apos;t find what you&apos;re looking for? Our support team is here to help you get the most out of EchoScribe.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact">
