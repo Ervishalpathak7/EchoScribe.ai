@@ -64,8 +64,8 @@ export default function PricingPage() {
   return (
     <div className="flex flex-col">
       {/* Header */}
-      <section className="py-20 bg-white">
-        <div className="container">
+      <section className="py-20 ">
+        <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <Badge className="mb-4" variant="outline">
               Pricing
@@ -136,8 +136,8 @@ export default function PricingPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-slate-50">
-        <div className="container">
+      <section className="py-20 ">
+        <div className="container bg-muted/40 mx-auto px-4 py-12 rounded-lg shadow-lg">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold mb-4">Frequently asked questions</h2>
             <p className="text-xl text-muted-foreground">Everything you need to know about EchoScribe pricing.</p>

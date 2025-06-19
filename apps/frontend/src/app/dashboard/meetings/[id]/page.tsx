@@ -354,7 +354,7 @@ The client emphasized the importance of the mobile experience and requested addi
             <CardContent>
               <div className="space-y-4">
                 {meeting.insights.map((insight, index) => (
-                  <div key={index} className="flex items-start gap-3 p-4 bg-blue-50 rounded-lg">
+                  <div key={index} className="flex items-start gap-3 p-4 rounded-lg">
                     <div className="bg-blue-100 p-2 rounded-full">
                       <Lightbulb className="h-4 w-4 text-blue-600" />
                     </div>
@@ -373,7 +373,7 @@ The client emphasized the importance of the mobile experience and requested addi
               <CardDescription>Complete transcript of the meeting with timestamps</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="bg-slate-50 p-4 rounded-lg">
+              <div className=" p-4 rounded-lg">
                 <pre className="text-sm whitespace-pre-wrap font-mono leading-relaxed">{meeting.transcript}</pre>
               </div>
             </CardContent>

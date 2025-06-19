@@ -56,12 +56,14 @@ export function Header() {
         </nav>
         <div className="flex items-center gap-4">
           <Link href="/auth/login">
-            <Button variant="ghost" size="sm">
+            <Button variant="ghost" size="sm" className="cursor-pointer">
               Log in
             </Button>
           </Link>
           <Link href="/auth/signup">
-            <Button size="sm">Get Started</Button>
+            <Button size="sm" className="cursor-pointer">
+              Get Started
+            </Button>
           </Link>
         </div>
       </div>

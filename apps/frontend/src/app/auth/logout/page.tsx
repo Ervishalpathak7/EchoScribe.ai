@@ -14,8 +14,8 @@ export default function LogoutPage() {
   }, [])
 
   return (
-    <div className="container flex h-screen flex-col items-center justify-center">
-      <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[400px]">
+    <div className="flex h-screen flex-col items-center justify-center">
+      <div className=" container mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[400px]">
         <Card>
           <CardHeader className="text-center">
             <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-green-100">

@@ -50,8 +50,8 @@ export default function ContactPage() {
   return (
     <div className="flex flex-col">
       {/* Header */}
-      <section className="py-20 bg-white">
-        <div className="container">
+      <section className="py-20  ">
+        <div className="container mx-auto px-4 md:px-8 rounded-3xl">
           <div className="text-center mb-16">
             <Badge className="mb-4" variant="outline">
               Contact Us
@@ -254,8 +254,8 @@ export default function ContactPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-slate-50">
-        <div className="container">
+      <section className="py-20 ">
+        <div className="container mx-auto px-4 md:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold mb-4">Frequently Asked Questions</h2>
             <p className="text-xl text-muted-foreground">Quick answers to common questions about EchoScribe</p>

@@ -32,7 +32,7 @@ export default function DashboardLayout({
 
   return (
     <SidebarProvider>
-      <div className="flex min-h-screen">
+      <div className="flex w-full min-h-screen">
         <Sidebar>
           <SidebarHeader>
             <div className="flex items-center gap-2 px-4 py-2">
@@ -117,8 +117,8 @@ export default function DashboardLayout({
           </SidebarFooter>
         </Sidebar>
 
-        <div className="flex-1 flex flex-col">
-          <header className="border-b border-border bg-white">
+        <div className="w-full flex-1 flex flex-col">
+          <header className="border-b border-border">
             <div className="flex h-16 items-center justify-between px-6">
               <div className="flex items-center gap-4">
                 <SidebarTrigger />

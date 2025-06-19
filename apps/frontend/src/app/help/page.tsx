@@ -137,8 +137,8 @@ export default function HelpPage() {
   return (
     <div className="flex flex-col">
       {/* Header */}
-      <section className="py-20 bg-white">
-        <div className="container">
+      <section className="py-20">
+        <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <Badge className="mb-4" variant="outline">
               Help Center
@@ -207,8 +207,8 @@ export default function HelpPage() {
       </section>
 
       {/* Main Content */}
-      <section className="py-20 bg-slate-50">
-        <div className="container">
+      <section className="py-20">
+        <div className="container mx-auto px-4">
           <Tabs defaultValue="browse" className="space-y-8">
             <TabsList className="grid w-full grid-cols-2 max-w-md mx-auto">
               <TabsTrigger value="browse">Browse Topics</TabsTrigger>
@@ -289,8 +289,8 @@ export default function HelpPage() {
       </section>
 
       {/* Still Need Help */}
-      <section className="py-20 bg-blue-600 text-white">
-        <div className="container text-center">
+      <section className="py-20  text-white">
+        <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-4">Still need help?</h2>
           <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
             Can&apos;t find what you&apos;re looking for? Our support team is here to help you get the most out of EchoScribe.

@@ -1,18 +1,32 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { CheckCircle, FileText, ListTodo, RefreshCw, Calendar, Trello, Zap, Clock, Shield, Users } from "lucide-react"
-import { Footer } from "@/components/footer"
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import {
+  CheckCircle,
+  FileText,
+  ListTodo,
+  RefreshCw,
+  Calendar,
+  Trello,
+  Zap,
+  Clock,
+  Shield,
+  Users,
+} from "lucide-react";
+import { Footer } from "@/components/footer";
+import { Header } from "@/components/header";
 
 export default function Home() {
   return (
     <div className="flex flex-col">
+      <Header />
+
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-white py-20 md:py-32">
-        <div className="container relative z-10">
+      <section className="relative overflow-hidden py-20 md:py-32">
+        <div className="container mx-auto px-4 relative z-10">
           <div className="grid grid-cols-1 gap-12 md:grid-cols-2 items-center">
             <div className="flex flex-col gap-6">
               <Badge className="w-fit" variant="outline">
@@ -22,12 +36,13 @@ export default function Home() {
                 Never miss a detail from your meetings again
               </h1>
               <p className="text-xl text-muted-foreground">
-                EchoScribe converts meeting recordings and lecture videos into structured summaries, action items, and
-                insights — automatically.
+                EchoScribe converts meeting recordings and lecture videos into
+                structured summaries, action items, and insights —
+                automatically.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <Link href="/auth/signup">
-                  <Button size="lg" className="w-full sm:w-auto">
+                  <Button size="lg" className="w-full sm:w-auto cursor-pointer">
                     Get Started for Free
                   </Button>
                 </Link>
@@ -35,10 +50,12 @@ export default function Home() {
                   <Button
                     size="lg"
                     variant="outline"
-                    className="w-full sm:w-auto"
+                    className="w-full sm:w-auto cursor-pointer"
                     onClick={(e) => {
-                      e.preventDefault()
-                      document.getElementById("features")?.scrollIntoView({ behavior: "smooth" })
+                      e.preventDefault();
+                      document
+                        .getElementById("features")
+                        ?.scrollIntoView({ behavior: "smooth" });
                     }}
                   >
                     See how it works
@@ -53,32 +70,44 @@ export default function Home() {
                     <div className="w-3 h-3 rounded-full bg-red-500" />
                     <div className="w-3 h-3 rounded-full bg-yellow-500" />
                     <div className="w-3 h-3 rounded-full bg-green-500" />
-                    <div className="ml-4 text-sm font-medium">EchoScribe - Meeting Summary</div>
+                    <div className="ml-4 text-sm font-medium">
+                      EchoScribe - Meeting Summary
+                    </div>
                   </div>
                 </div>
-                <div className="bg-white p-6">
+                <div className="bg-black p-6">
                   <div className="flex flex-col gap-6">
                     <div>
-                      <h3 className="text-lg font-semibold mb-2">Project Kickoff Meeting</h3>
+                      <h3 className="text-lg font-semibold mb-2">
+                        Project Kickoff Meeting
+                      </h3>
                       <div className="flex items-center gap-2 text-sm text-muted-foreground">
                         <Clock className="h-4 w-4" />
                         <span>June 15, 2025 • 45 minutes</span>
                       </div>
                     </div>
                     <div>
-                      <h4 className="text-sm font-medium text-muted-foreground mb-2">SUMMARY</h4>
+                      <h4 className="text-sm font-medium text-muted-foreground mb-2">
+                        SUMMARY
+                      </h4>
                       <p className="text-sm">
-                        The team discussed the project timeline, assigned key responsibilities, and agreed on weekly
-                        check-ins. The client emphasized the importance of the mobile experience and requested
-                        additional user testing before launch.
+                        The team discussed the project timeline, assigned key
+                        responsibilities, and agreed on weekly check-ins. The
+                        client emphasized the importance of the mobile
+                        experience and requested additional user testing before
+                        launch.
                       </p>
                     </div>
                     <div>
-                      <h4 className="text-sm font-medium text-muted-foreground mb-2">ACTION ITEMS</h4>
+                      <h4 className="text-sm font-medium text-muted-foreground mb-2">
+                        ACTION ITEMS
+                      </h4>
                       <ul className="space-y-2">
                         <li className="flex items-start gap-2 text-sm">
                           <CheckCircle className="h-4 w-4 text-blue-600 mt-0.5" />
-                          <span>Sarah to create project timeline by Friday</span>
+                          <span>
+                            Sarah to create project timeline by Friday
+                          </span>
                         </li>
                         <li className="flex items-start gap-2 text-sm">
                           <CheckCircle className="h-4 w-4 text-blue-600 mt-0.5" />
@@ -86,7 +115,9 @@ export default function Home() {
                         </li>
                         <li className="flex items-start gap-2 text-sm">
                           <CheckCircle className="h-4 w-4 text-blue-600 mt-0.5" />
-                          <span>Team to review design mockups by next Tuesday</span>
+                          <span>
+                            Team to review design mockups by next Tuesday
+                          </span>
                         </li>
                       </ul>
                     </div>
@@ -97,19 +128,21 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="absolute top-1/2 left-0 -translate-y-1/2 -z-10 h-96 w-96 rounded-full bg-blue-50" />
       </section>
 
       {/* Features Section */}
-      <section id="features" className="py-20 bg-slate-50">
-        <div className="container">
+      <section id="features" className="py-20">
+        <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <Badge className="mb-4" variant="outline">
               Features
             </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">How EchoScribe works</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              How EchoScribe works
+            </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Our AI-powered platform transforms your audio and video content into actionable insights in minutes.
+              Our AI-powered platform transforms your audio and video content
+              into actionable insights in minutes.
             </p>
           </div>
 
@@ -122,8 +155,8 @@ export default function Home() {
                   </div>
                   <h3 className="text-xl font-semibold">Smart Summarization</h3>
                   <p className="text-muted-foreground">
-                    Our AI analyzes your recordings to extract key points, decisions, and announcements, creating
-                    concise summaries.
+                    Our AI analyzes your recordings to extract key points,
+                    decisions, and announcements, creating concise summaries.
                   </p>
                 </div>
               </CardContent>
@@ -137,8 +170,8 @@ export default function Home() {
                   </div>
                   <h3 className="text-xl font-semibold">Task Extraction</h3>
                   <p className="text-muted-foreground">
-                    Automatically identify action items, assignments, and deadlines from your meetings and organize
-                    them.
+                    Automatically identify action items, assignments, and
+                    deadlines from your meetings and organize them.
                   </p>
                 </div>
               </CardContent>
@@ -150,22 +183,28 @@ export default function Home() {
                   <div className="bg-blue-100 p-3 rounded-full">
                     <RefreshCw className="h-6 w-6 text-blue-600" />
                   </div>
-                  <h3 className="text-xl font-semibold">Seamless Integration</h3>
+                  <h3 className="text-xl font-semibold">
+                    Seamless Integration
+                  </h3>
                   <p className="text-muted-foreground">
-                    Sync your summaries and tasks with Notion, Google Calendar, Trello, and other productivity tools.
+                    Sync your summaries and tasks with Notion, Google Calendar,
+                    Trello, and other productivity tools.
                   </p>
                 </div>
               </CardContent>
             </Card>
           </div>
 
-          <div className="mt-16 bg-white rounded-xl overflow-hidden border border-border shadow-lg">
+          <div className="mt-16 rounded-xl overflow-hidden border border-border shadow-lg">
             <div className="grid grid-cols-1 md:grid-cols-2">
               <div className="p-8 md:p-12 flex flex-col justify-center">
-                <h3 className="text-2xl font-bold mb-4">Sync with your favorite tools</h3>
+                <h3 className="text-2xl font-bold mb-4">
+                  Sync with your favorite tools
+                </h3>
                 <p className="text-muted-foreground mb-6">
-                  EchoScribe integrates seamlessly with the tools you already use, making it easy to keep your team
-                  aligned and your projects on track.
+                  EchoScribe integrates seamlessly with the tools you already
+                  use, making it easy to keep your team aligned and your
+                  projects on track.
                 </p>
                 <ul className="space-y-4">
                   <li className="flex items-center gap-3">
@@ -188,9 +227,24 @@ export default function Home() {
                           strokeWidth="2"
                           strokeLinecap="round"
                         />
-                        <path d="M9 8H15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                        <path d="M9 12H15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                        <path d="M9 16H13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                        <path
+                          d="M9 8H15"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                        />
+                        <path
+                          d="M9 12H15"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                        />
+                        <path
+                          d="M9 16H13"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                        />
                       </svg>
                     </div>
                     <span>Notion for organized knowledge management</span>
@@ -203,7 +257,7 @@ export default function Home() {
                   </li>
                 </ul>
               </div>
-              <div className="bg-blue-50 p-8 md:p-0 flex items-center justify-center">
+              <div className=" p-8 md:p-0 flex items-center justify-center">
                 <div className="relative w-full max-w-md">
                   <div className="bg-white rounded-lg shadow-md border border-border p-6 mb-6 ml-6">
                     <div className="flex items-center gap-2 mb-4">
@@ -219,7 +273,10 @@ export default function Home() {
                       <Trello className="h-5 w-5 text-blue-600" />
                       <h4 className="font-medium">Trello</h4>
                     </div>
-                    <p className="text-sm text-muted-foreground">Created 5 new cards in your &quot;Project Tasks&quot; board</p>
+                    <p className="text-sm text-muted-foreground">
+                      Created 5 new cards in your &quot;Project Tasks&quot;
+                      board
+                    </p>
                   </div>
                 </div>
               </div>
@@ -230,14 +287,17 @@ export default function Home() {
 
       {/* Benefits Section */}
       <section className="py-20">
-        <div className="container">
+        <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <Badge className="mb-4" variant="outline">
               Benefits
             </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Why teams love EchoScribe</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Why teams love EchoScribe
+            </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Save time, improve collaboration, and never miss important details again.
+              Save time, improve collaboration, and never miss important details
+              again.
             </p>
           </div>
 
@@ -248,8 +308,8 @@ export default function Home() {
               </div>
               <h3 className="text-xl font-semibold">Boost Productivity</h3>
               <p className="text-muted-foreground">
-                Reduce time spent on meeting notes and follow-ups by up to 80%, allowing your team to focus on what
-                matters.
+                Reduce time spent on meeting notes and follow-ups by up to 80%,
+                allowing your team to focus on what matters.
               </p>
             </div>
 
@@ -259,7 +319,8 @@ export default function Home() {
               </div>
               <h3 className="text-xl font-semibold">Save Time</h3>
               <p className="text-muted-foreground">
-                Get comprehensive meeting summaries in minutes instead of hours, with no manual note-taking required.
+                Get comprehensive meeting summaries in minutes instead of hours,
+                with no manual note-taking required.
               </p>
             </div>
 
@@ -269,7 +330,8 @@ export default function Home() {
               </div>
               <h3 className="text-xl font-semibold">Never Miss Details</h3>
               <p className="text-muted-foreground">
-                Capture every important point and action item, even in long meetings or complex discussions.
+                Capture every important point and action item, even in long
+                meetings or complex discussions.
               </p>
             </div>
           </div>
@@ -277,13 +339,15 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section */}
-      <section id="testimonials" className="py-20 bg-slate-50">
-        <div className="container">
+      <section id="testimonials" className="py-20">
+        <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <Badge className="mb-4" variant="outline">
               Testimonials
             </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Trusted by teams everywhere</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Trusted by teams everywhere
+            </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               See what our customers have to say about EchoScribe.
             </p>
@@ -295,14 +359,20 @@ export default function Home() {
                 <div className="flex flex-col gap-4">
                   <div className="flex">
                     {[1, 2, 3, 4, 5].map((star) => (
-                      <svg key={star} className="h-5 w-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                      <svg
+                        key={star}
+                        className="h-5 w-5 text-yellow-400"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
                         <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                       </svg>
                     ))}
                   </div>
                   <p className="text-muted-foreground">
-                    &quot;EchoScribe has transformed how our remote team collaborates. We save hours every week and never
-                    miss important action items.&quot;
+                    &quot;EchoScribe has transformed how our remote team
+                    collaborates. We save hours every week and never miss
+                    important action items.&quot;
                   </p>
                   <div className="flex items-center gap-3 mt-2">
                     <div className="bg-blue-100 h-10 w-10 rounded-full flex items-center justify-center">
@@ -310,7 +380,9 @@ export default function Home() {
                     </div>
                     <div>
                       <p className="font-medium">Sarah Johnson</p>
-                      <p className="text-sm text-muted-foreground">Product Manager, Acme Inc</p>
+                      <p className="text-sm text-muted-foreground">
+                        Product Manager, Acme Inc
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -322,14 +394,20 @@ export default function Home() {
                 <div className="flex flex-col gap-4">
                   <div className="flex">
                     {[1, 2, 3, 4, 5].map((star) => (
-                      <svg key={star} className="h-5 w-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                      <svg
+                        key={star}
+                        className="h-5 w-5 text-yellow-400"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
                         <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                       </svg>
                     ))}
                   </div>
                   <p className="text-muted-foreground">
-                    &quot;As a student, EchoScribe helps me capture every detail from lectures. The Notion integration is a
-                    game-changer for my study workflow.&quot;
+                    &quot;As a student, EchoScribe helps me capture every detail
+                    from lectures. The Notion integration is a game-changer for
+                    my study workflow.&quot;
                   </p>
                   <div className="flex items-center gap-3 mt-2">
                     <div className="bg-blue-100 h-10 w-10 rounded-full flex items-center justify-center">
@@ -337,7 +415,9 @@ export default function Home() {
                     </div>
                     <div>
                       <p className="font-medium">Michael Chen</p>
-                      <p className="text-sm text-muted-foreground">Graduate Student, Tech University</p>
+                      <p className="text-sm text-muted-foreground">
+                        Graduate Student, Tech University
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -349,14 +429,20 @@ export default function Home() {
                 <div className="flex flex-col gap-4">
                   <div className="flex">
                     {[1, 2, 3, 4, 5].map((star) => (
-                      <svg key={star} className="h-5 w-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                      <svg
+                        key={star}
+                        className="h-5 w-5 text-yellow-400"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
                         <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                       </svg>
                     ))}
                   </div>
                   <p className="text-muted-foreground">
-                    &quot;We&apos;ve implemented EchoScribe across our entire organization. The ROI in terms of time saved and
-                    improved follow-through is incredible.&quot;
+                    &quot;We&apos;ve implemented EchoScribe across our entire
+                    organization. The ROI in terms of time saved and improved
+                    follow-through is incredible.&quot;
                   </p>
                   <div className="flex items-center gap-3 mt-2">
                     <div className="bg-blue-100 h-10 w-10 rounded-full flex items-center justify-center">
@@ -364,7 +450,9 @@ export default function Home() {
                     </div>
                     <div>
                       <p className="font-medium">Alex Rodriguez</p>
-                      <p className="text-sm text-muted-foreground">CTO, Enterprise Solutions</p>
+                      <p className="text-sm text-muted-foreground">
+                        CTO, Enterprise Solutions
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -374,7 +462,12 @@ export default function Home() {
 
           <div className="mt-16 flex flex-wrap justify-center gap-12 items-center opacity-70">
             <div className="h-8">
-              <svg className="h-full" viewBox="0 0 124 34" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <svg
+                className="h-full"
+                viewBox="0 0 124 34"
+                fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <path d="M17.1 0C7.7 0 0 7.7 0 17.1C0 26.5 7.7 34.2 17.1 34.2C26.5 34.2 34.2 26.5 34.2 17.1C34.2 7.7 26.5 0 17.1 0ZM17.1 30.8C9.6 30.8 3.4 24.6 3.4 17.1C3.4 9.6 9.6 3.4 17.1 3.4C24.6 3.4 30.8 9.6 30.8 17.1C30.8 24.6 24.6 30.8 17.1 30.8Z" />
                 <path d="M67.5 22.6C62 22.6 57.6 18.2 57.6 12.7C57.6 7.2 62 2.8 67.5 2.8C73 2.8 77.4 7.2 77.4 12.7C77.4 18.2 73 22.6 67.5 22.6ZM67.5 6.2C63.9 6.2 61 9.1 61 12.7C61 16.3 63.9 19.2 67.5 19.2C71.1 19.2 74 16.3 74 12.7C74 9.1 71.1 6.2 67.5 6.2Z" />
                 <path d="M38.5 3.4H42.3V22H38.5V3.4Z" />
@@ -385,7 +478,12 @@ export default function Home() {
               </svg>
             </div>
             <div className="h-8">
-              <svg className="h-full" viewBox="0 0 124 34" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <svg
+                className="h-full"
+                viewBox="0 0 124 34"
+                fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <path d="M41.1 17.2C41.1 19.5 39.2 21.4 36.9 21.4C34.6 21.4 32.7 19.5 32.7 17.2C32.7 14.9 34.6 13 36.9 13C39.2 13 41.1 14.9 41.1 17.2Z" />
                 <path d="M58.1 21.2H54.3V12.8C54.3 10.2 53.1 8.9 50.7 8.9C48.3 8.9 46.9 10.5 46.9 13.5V21.2H43.1V0.5H46.9V9.3C47.9 8 49.5 7.2 51.5 7.2C55.1 7.2 58.1 9.6 58.1 13.8V21.2Z" />
                 <path d="M60.2 14.2C60.2 10.1 63.5 7.2 67.8 7.2C72.1 7.2 75.4 10.1 75.4 14.2C75.4 18.3 72.1 21.2 67.8 21.2C63.5 21.2 60.2 18.3 60.2 14.2ZM71.6 14.2C71.6 11.9 70 10.1 67.8 10.1C65.6 10.1 64 11.9 64 14.2C64 16.5 65.6 18.3 67.8 18.3C70 18.3 71.6 16.5 71.6 14.2Z" />
@@ -398,7 +496,12 @@ export default function Home() {
               </svg>
             </div>
             <div className="h-8">
-              <svg className="h-full" viewBox="0 0 124 34" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <svg
+                className="h-full"
+                viewBox="0 0 124 34"
+                fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <path d="M17.1 0C7.7 0 0 7.7 0 17.1C0 26.5 7.7 34.2 17.1 34.2C26.5 34.2 34.2 26.5 34.2 17.1C34.2 7.7 26.5 0 17.1 0ZM17.1 30.8C9.6 30.8 3.4 24.6 3.4 17.1C3.4 9.6 9.6 3.4 17.1 3.4C24.6 3.4 30.8 9.6 30.8 17.1C30.8 24.6 24.6 30.8 17.1 30.8Z" />
                 <path d="M67.5 22.6C62 22.6 57.6 18.2 57.6 12.7C57.6 7.2 62 2.8 67.5 2.8C73 2.8 77.4 7.2 77.4 12.7C77.4 18.2 73 22.6 67.5 22.6ZM67.5 6.2C63.9 6.2 61 9.1 61 12.7C61 16.3 63.9 19.2 67.5 19.2C71.1 19.2 74 16.3 74 12.7C74 9.1 71.1 6.2 67.5 6.2Z" />
                 <path d="M38.5 3.4H42.3V22H38.5V3.4Z" />
@@ -413,16 +516,23 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-blue-600 text-white">
-        <div className="container">
+      <section className="py-20 w-full text-white ">
+        <div className="container mx-auto border border-border shadow-lg rounded-xl bg-muted/40 p-8 md:p-12">
           <div className="flex flex-col items-center text-center gap-8">
-            <h2 className="text-3xl md:text-4xl font-bold">Ready to transform your meetings?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold">
+              Ready to transform your meetings?
+            </h2>
             <p className="text-xl text-blue-100 max-w-2xl">
-              Join thousands of teams and individuals who are saving time and improving productivity with EchoScribe.
+              Join thousands of teams and individuals who are saving time and
+              improving productivity with EchoScribe.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/auth/signup">
-                <Button size="lg" variant="secondary" className="w-full sm:w-auto">
+                <Button
+                  size="lg"
+                  variant="secondary"
+                  className="w-full sm:w-auto"
+                >
                   Start Free Trial
                 </Button>
               </Link>
@@ -442,5 +552,5 @@ export default function Home() {
 
       <Footer />
     </div>
-  )
+  );
 }
