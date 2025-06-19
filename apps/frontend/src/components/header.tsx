@@ -1,14 +1,14 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { usePathname } from "next/navigation"
-import { Button } from "@/components/ui/button"
-import { Logo } from "@/components/logo"
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { Button } from "@/components/ui/button";
+import { Logo } from "@/components/logo";
 
 export function Header() {
-  const pathname = usePathname()
-  const isAuthPage = pathname.includes("/auth")
-  const isDashboardPage = pathname.includes("/dashboard")
+  const pathname = usePathname();
+  const isAuthPage = pathname.includes("/auth");
+  const isDashboardPage = pathname.includes("/dashboard");
 
   if (isAuthPage) {
     return (
@@ -17,16 +17,16 @@ export function Header() {
           <Logo />
         </div>
       </header>
-    )
+    );
   }
 
   if (isDashboardPage) {
-    return null // Dashboard has its own navigation
+    return null; // Dashboard has its own navigation
   }
 
   return (
-    <header className="border-b border-border">
-      <div className="container flex h-16 items-center justify-between">
+    <header className="border-b border-border flex items-center ">
+      <div className="container mx-auto px-4 flex h-16 items-center justify-between ">
         <Logo />
         <nav className="hidden md:flex items-center gap-6">
           <Link
@@ -66,5 +66,5 @@ export function Header() {
         </div>
       </div>
     </header>
-  )
+  );
 }
